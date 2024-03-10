@@ -22,8 +22,10 @@ SmartArray::SmartArray(const SmartArray& other) {
 
 SmartArray& SmartArray::operator=(const SmartArray& other) {
 	if (this != &other) {
-		this->sizeOfArray_ = other.sizeOfArray_;
 		delete[] sm_array_;
+		this->sizeOfArray_ = other.sizeOfArray_;
+		this->countForOverflow_ = other.countForOverflow_;
+		
 		sm_array_ = new int[other.sizeOfArray_];
 		for (int i = 0; i < other.sizeOfArray_; i++)
 		{

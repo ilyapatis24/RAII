@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
         std::cout << "В массиве 4 находится массив 2" << std::endl;
         SmartArray smartArray4 = smartArray2;
         smartArray4.printSmartArray();
-
+        std::cout << std::endl;
         std::cout << "Сам в себя" << std::endl;
         smartArray4 = smartArray4;
         smartArray4.printSmartArray();

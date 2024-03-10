@@ -3,11 +3,6 @@
 SmartArray::SmartArray(const size_t size) {
 	sizeOfArray_ = size;
 	sm_array_ = new int[size] {};
-	for (int i = 0; i < sizeOfArray_; i++)
-	{
-		sm_array_[i] = i;
-	}
-	std::cout << std::endl;
 }
 
 SmartArray::~SmartArray() {
@@ -28,10 +23,7 @@ void SmartArray::addElement(const int value)
 	{
 		throw std::out_of_range("Size of array is smaller");
 	}
-	else
-	{
-		sm_array_[countForOverflow_++] = value;
-	}
+	sm_array_[countForOverflow_++] = value;
 };
 
 int SmartArray::getElement(const size_t index)
@@ -40,8 +32,5 @@ int SmartArray::getElement(const size_t index)
 	{
 		throw std::out_of_range("The getting element is out of array range");
 	}
-	else
-	{
-		return sm_array_[index];
-	}
+	return sm_array_[index];
 };

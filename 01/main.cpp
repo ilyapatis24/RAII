@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
         smartArray.addElement(15);
         smartArray.printSmartArray();
         std::cout << "#########################################" << std::endl;
-        std::cout << smartArray.getElement(5) << std::endl;
+        std::cout << smartArray.getElement(4) << std::endl;
     }
     catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;

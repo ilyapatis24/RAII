@@ -14,6 +14,30 @@ SmartArray::~SmartArray() {
 	delete[] sm_array_;
 }
 
+SmartArray::SmartArray(const SmartArray& other) {
+	this->sizeOfArray_ = other.sizeOfArray_;
+	sm_array_ = new int[other.sizeOfArray_];
+	for (int i = 0; i < other.sizeOfArray_; i++)
+	{
+		this->sm_array_[i] = other.sm_array_[i];
+	}
+	std::cout << std::endl;
+}
+
+SmartArray& SmartArray::operator=(const SmartArray& other) {
+	if (this != &other) {
+		this->sizeOfArray_ = other.sizeOfArray_;
+		delete[] sm_array_;
+		sm_array_ = new int[other.sizeOfArray_];
+		for (int i = 0; i < other.sizeOfArray_; i++)
+		{
+			this->sm_array_[i] = other.sm_array_[i];
+		}
+		std::cout << std::endl;
+	}
+	return *this;
+}
+
 void SmartArray::printSmartArray()
 {
 	for (int i = 0; i < sizeOfArray_; i++)
@@ -30,7 +54,8 @@ void SmartArray::addElement(const int value)
 	}
 	else
 	{
-		sm_array_[countForOverflow_++] = value;
+		sm_array_[countForOverflow_] = value;
+		++countForOverflow_;
 	}
 };
 

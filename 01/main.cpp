@@ -5,15 +5,15 @@ int main(int argc, char** argv) {
 
     try {
 
-        SmartArray sArr(5);
-        sArr.addElement(1);
-        sArr.addElement(4);
-        sArr.addElement(155);
-        sArr.addElement(14);
-        sArr.addElement(15);
-        sArr.printSmartArray();
+        SmartArray smartArray(5);
+        smartArray.addElement(1);
+        smartArray.addElement(4);
+        smartArray.addElement(155);
+        smartArray.addElement(14);
+        smartArray.addElement(15);
+        smartArray.printSmartArray();
         std::cout << "#########################################" << std::endl;
-        std::cout << sArr.getElement(5) << std::endl;
+        std::cout << smartArray.getElement(5) << std::endl;
     }
     catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;
